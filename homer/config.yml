@@ -75,7 +75,6 @@ services:
         logo: "assets/tools/sample.png"
         subtitle: "Bookmark example"
         tag: "app"
-        class: ".card.green"
         keywords: "self hosted reddit"
         url: "https://www.reddit.com/r/selfhosted/"
         target: "_blank" # optional html a tag target attribute
