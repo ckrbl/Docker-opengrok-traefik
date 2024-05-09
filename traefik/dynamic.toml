@@ -1,5 +1,5 @@
 [http.routers]
     [http.routers.index]
         entryPoints = ["web80"]
-        rule = "Path(`/`)"
-        service = "whoami-docker-opengrok-traefik@docker"
+        rule = "Host(`ub.lan`)"
+        service = "homer-docker-opengrok-traefik@docker"

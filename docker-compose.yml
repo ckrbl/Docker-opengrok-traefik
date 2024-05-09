@@ -2,7 +2,7 @@ version: "3"
 
 services:
   traefik:
-    image: traefik:v2.11
+    image: traefik
     container_name: "traefik"
     ports:
       - "80:80"
@@ -12,8 +12,10 @@ services:
       - "./traefik/static.toml:/etc/traefik/traefik.toml"
       - "./traefik/dynamic.toml:/etc/traefik/dynamic.toml"
 
-  whoami:
-    image: "traefik/whoami"
-    container_name: "simple_service"
+  homer:
+    image: "b4bz/homer"
+    container_name: "homer"
     labels:
       - "traefik.enable=true"
+    volumes:
+      - ./homer/:/www/assets

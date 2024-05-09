@@ -8,8 +8,6 @@
 [entryPoints]
     [entryPoints.web80]
         address = ":80"
-    [entryPoints.web443]
-        address = ":443"
 
 [providers]
     [providers.docker]
