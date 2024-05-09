@@ -9,6 +9,15 @@
     [entryPoints.web80]
         address = ":80"
 
+        [entryPoints.web80.http]
+            [entryPoints.web80.http.redirections]
+            [entryPoints.web80.http.redirections.entryPoint]
+                to = "web443"
+                scheme = "https"
+
+    [entryPoints.web443]
+        address = ":443"
+
 [providers]
     [providers.docker]
         exposedByDefault = false
