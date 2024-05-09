@@ -19,3 +19,15 @@ services:
       - "traefik.enable=true"
     volumes:
       - ./homer/:/www/assets
+
+  opengrok:
+    image: "opengrok/docker"
+    container_name: "opengrok"
+    environment:
+      - URL_ROOT=/opengrok
+    labels:
+      - "traefik.enable=true"
+    volumes:
+      - ./opengrok/src:/opengrok/src
+      - ./opengrok/data:/opengrok/data
+      - ./opengrok/etc:/opengrok/etc
