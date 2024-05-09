@@ -3,3 +3,8 @@
         entryPoints = ["web80"]
         rule = "Host(`ub.lan`)"
         service = "homer-docker-opengrok-traefik@docker"
+
+    [http.routers.opengrok]
+        entryPoints = ["web80"]
+        rule = "PathPrefix(`/opengrok`)"
+        service = "opengrok-docker-opengrok-traefik@docker"
