@@ -1,15 +1,25 @@
+[[tls.certificates]]
+    certFile = "/etc/traefik/pki/ub.lan.crt"
+    keyFile = "/etc/traefik/pki/ub.lan.key"
+    stores = ["default"]
+
+[tls.stores]
+    [tls.stores.default]
+
 [http.routers]
-    [http.routers.index]
-        entryPoints = ["web80"]
+    [http.routers.homer]
+        entryPoints = ["web443"]
         middlewares = ["compress-all-http"]
         rule = "Host(`ub.lan`)"
         service = "homer-docker-opengrok-traefik@docker"
+        [http.routers.homer.tls]
 
     [http.routers.opengrok]
-        entryPoints = ["web80"]
+        entryPoints = ["web443"]
         middlewares = ["compress-all-http"]
         rule = "PathPrefix(`/opengrok`)"
         service = "opengrok-docker-opengrok-traefik@docker"
+        [http.routers.opengrok.tls]
 
 [http.middlewares]
-  [http.middlewares.compress-all-http.compress]
+    [http.middlewares.compress-all-http.compress]

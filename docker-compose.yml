@@ -6,11 +6,13 @@ services:
     container_name: "traefik"
     ports:
       - "80:80"
+      - "443:443"
       - "8080:8080"
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock"
       - "./traefik/static.toml:/etc/traefik/traefik.toml"
       - "./traefik/dynamic.toml:/etc/traefik/dynamic.toml"
+      - "./traefik/pki:/etc/traefik/pki"
 
   homer:
     image: "b4bz/homer"
