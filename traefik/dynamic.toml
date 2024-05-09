@@ -1,10 +1,15 @@
 [http.routers]
     [http.routers.index]
         entryPoints = ["web80"]
+        middlewares = ["compress-all-http"]
         rule = "Host(`ub.lan`)"
         service = "homer-docker-opengrok-traefik@docker"
 
     [http.routers.opengrok]
         entryPoints = ["web80"]
+        middlewares = ["compress-all-http"]
         rule = "PathPrefix(`/opengrok`)"
         service = "opengrok-docker-opengrok-traefik@docker"
+
+[http.middlewares]
+  [http.middlewares.compress-all-http.compress]
