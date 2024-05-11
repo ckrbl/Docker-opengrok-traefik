@@ -27,6 +27,8 @@ services:
     container_name: "opengrok"
     environment:
       - URL_ROOT=/opengrok
+      - SYNC_PERIOD_MINUTES=0
+      - NOMIRROR=1
     labels:
       - "traefik.enable=true"
     volumes:
