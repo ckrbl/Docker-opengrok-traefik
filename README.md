@@ -20,3 +20,7 @@ Extensible to host other services.
 
  1. Update traefik/dynamic.toml with the machine's hostname
  1. Input a certificate and private key into traefik/pki at the path indicated in dynamic.toml
+
+## Adding Repos
+
+For a comprehensive guide on how to add repos, consult the [HOW_TO_ADD_REPOS.md](HOW_TO_ADD_REPOS.md) file.
