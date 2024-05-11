@@ -4,7 +4,11 @@ First extract the source folder to ./opengrok/src while docker-compose is runnin
 The files should be next level down underneath the folder. For example:
 
 ```
-
+src
+├── qemu-9.0.0
+├── u-boot-2024.04
+├── unicorn-2.0.1
+└── virt-manager-4.1.0
 ```
 
 Obtain a shell inside the docker container, such as with:
